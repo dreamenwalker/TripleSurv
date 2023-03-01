@@ -1,0 +1,108 @@
+{
+    "name": "tests_loss3_01",
+    "mode": "train",
+    "dataset_name": "metabric",
+    "model_name": "deep_hit",
+    "load":false,
+    "pretrained": "",
+    "data":{
+        "bidding":{
+            "root_dir": "/home/admin/workspace/SkinCancer/Code/TripleSurv_zlz/new_promgram/data/",
+            "data_root":"BIDDING"
+        },
+        "metabric": {
+           "root_dir": "/home/admin/workspace/SkinCancer/Code/TripleSurv_zlz/new_promgram/data/",
+           "dataset": "METABRIC"
+        },
+        "support": {
+           "image_root":"/mnt/workspace/SkinCancer/Code/derm7pt_classifier/data/private_data",
+           "dataset": "SUPPORT"
+        }
+        },
+    "network":{
+        "deep_hit": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.4,
+           "out_layer": "softmax"
+        },
+        "deep_cox": {
+           "num_cat_bins": 1,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "tanh"
+        },
+        "deep_cox_hazard": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "tanh"
+        },
+        "deep_mtlr": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "softmax"
+        }
+        },
+    "loss":{
+        "likelihood":{
+            "flag": true,
+            "Kbins":50,
+            "gamma": 0.5
+        },
+        "partial_likelihood":{
+            "flag": false,
+            "gamma": 1.0,
+            "mode": "breslow"
+        },
+        "rank":{
+            "flag": true,
+            "sigma": 1.0,
+            "gamma": 1.0
+        },
+        "self_rank":{
+            "flag": false,
+            "sigma": 2.0,
+            "scale": 0.8,
+            "gamma": 1.0
+        },
+        "calibration":{
+            "flag": true,
+            "gamma": 2.0,
+            "Kbins":50,
+            "nbins": 5
+        }
+        },
+    "train":{
+        "save_dir": "model/",
+        "log_dir": "log_test",
+        "epochs": 100,
+        "batch_size": 64,
+        "num_workers": 8,
+        "num_gpus": 1,
+        "grad_accum_step": 1,
+        "scheduler":{
+            "warmup":{
+                "steps": 10,
+                "type": "linear",
+                "start": 0.1
+            },
+            "type": "cosine",
+            "step": 100,
+            "milestones": [10, 20, 40, 60, 80],
+            "min": 5.5e-5,
+            "gamma": 0.1
+            },
+        "optimizer":{
+            "type": "AdamW",
+            "lr": 1e-3,
+            "momentum": 0.95,
+            "weight_decay": 0.05
+            }
+        }
+   }
