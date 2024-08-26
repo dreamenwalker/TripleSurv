@@ -37,6 +37,7 @@ We thanks a lot for publish studies[1-3].Our code is mainly inspired by the x-ca
 
 [1] M. Goldstein, X. Han, A. Puli, A. Perotte, and R. Ranganath, “Xcal: Explicit calibration for survival analysis,” Advances in neural
 information processing systems, vol. 33, pp. 18 296–18 307, 2020
+
 [2] Lee C, Zame WR, Yoon J, van der Schaar M. Deephit: A deep learning approach to survival analysis with competing risks.  Thirty-Second AAAI Conference on Artificial Intelligence; 2018; 2018.
 
 [3] A. Avati, T. Duan, S. Zhou, K. Jung, N. H. Shah, and A. Y. Ng, “Countdown regression: Sharp and calibrated survival predictions,” pp. 145–155, 2020.
