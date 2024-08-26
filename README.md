@@ -1,7 +1,7 @@
 # TripleSurv
 - **2024-08-23:** Our work is accepted at IEEE Transactions on knowledge and data engineering. 🎉🎉🎉
 
-# Name: TripleSurv: Triplet Time-adaptive Coordinate Learning Approach for Survival Analysis
+# TripleSurv: Triplet Time-adaptive Coordinate Learning Approach for Survival Analysis
 
 Author: Liwen Zhang, Lianzhen Zhong, Fan Yang, Linglong Tang, Di Dong, Hui Hui, Jie Tian, Fellow, IEEE
 
