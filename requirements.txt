@@ -1,0 +1,4 @@
+pip install ray[tune]
+pip install prefetch_generator
+pip install lifelines
+pip install torchsummary
