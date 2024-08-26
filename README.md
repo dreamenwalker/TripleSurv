@@ -1,5 +1,5 @@
 # TripleSurv
-- **2024-08-23:** Our work is accepted at IEEE Transaction on knowledge and data engineering. 🎉🎉🎉
+- **2024-08-23:** Our work is accepted at IEEE Transactions on knowledge and data engineering. 🎉🎉🎉
 
 # Name: TripleSurv: Triplet Time-adaptive Coordinate Learning Approach for Survival Analysis
 
