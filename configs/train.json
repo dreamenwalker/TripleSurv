@@ -1,0 +1,173 @@
+{
+    "name": "R3_821lossforweight_deltarou0.51.0no-",
+    "mode": "train",
+    "dataset_name": "bidding",
+    "model_name": "deep_mtlr",
+    "loss_list": ["likelihood","self_rank","calibration"],
+    "load":false,
+    "pretrained": "",
+    "loss":{
+        "self_rank":{
+            "gamma":1.0,
+            "sigma": 0.5,
+            "scale": 1.0,
+            "risk_flag": true
+            },
+        "likelihood":{
+                    "gamma": 1.0,
+                    "Kbins":50,
+                    "risk_flag": false
+                    },
+
+        "calibration":{
+                    "gamma": 1.0,
+                    "Kbins":50,
+                    "nbins": 5,
+                    "risk_flag": false
+                    },
+        "xcal":{
+            "num_dcal_bins":20,
+            "train_gamma":10000.0,
+            "Kbins":20,
+            "gamma": 2.0,
+            "risk_flag": false
+        },
+        "crps":{
+            "Kbins":20,
+            "gamma": 1.0,
+            "risk_flag": false
+        },
+        "partial_likelihood":{
+            "gamma": 1.0,
+            "mode": "breslow",
+            "Kbins":50,
+            "risk_flag": true
+        },
+        "rank":{
+            "mode": "hit",
+            "sigma": 2.0,
+            "gamma": 1.0,
+            "Kbins":50,
+            "risk_flag": true
+        }
+        },
+    "data":{
+        "bidding":{
+            "root_dir": "./data/",
+            "dataset":"BIDDING",
+            "filename":"cleaned_features_v1",
+            "fold":0
+        },
+        "metabric": {
+           "root_dir": "./data/",
+           "dataset": "METABRIC",
+           "filename":"cleaned_features_v1",
+           "fold":3
+        },
+        "support": {
+           "root_dir":"./data//",
+           "dataset": "SUPPORT",
+           "filename":"cleaned_features_v1",
+           "fold":0
+        },
+        "npc": {
+           "root_dir":"./data/",
+           "dataset": "NPC",
+           "filename":"cleaned_features_v1_DFS",
+           "fold":4
+        },
+        "npc-mri": {
+           "root_dir":"./data/",
+           "dataset": "NPC-MRI",
+           "filename":"T1_dlFeature_DFS",
+           "fold":0
+        },
+        "mnist": {
+           "root_dir":"./data/",
+           "dataset": "MNIST",
+           "input_size": 64,
+           "in_chans": 3
+        }
+        },
+    "network":{
+        "deep_hit": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [84, 112, 84],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "softmax"
+        },
+        "deep_cox": {
+           "num_cat_bins": 1,
+           "hidden_sizes": [84, 112, 84],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "tanh"
+        },
+        "deep_mtlr": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [84, 112, 84],
+           "act_layer": "relu",
+           "batchnorm": true,
+           "dropout_rate": 0.2,
+           "out_layer": "softmax"
+        },
+        "resnet": {
+           "variant": "resnet18",
+           "D_in": 512,
+           "num_cat_bins": 20,
+           "mode": "cat",
+           "out_layer": "softmax",
+           "pretrained": false 
+        },
+        "senet": {
+           "D_in": 513,
+           "num_cat_bins": 50,
+           "mode": "cat",
+           "out_layer": "softmax",
+           "pretrained": false 
+        },
+        "deep_hit_tf": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.4,
+           "out_layer": "softmax"
+        },
+        "deep_cox_hazard": {
+           "num_cat_bins": 50,
+           "hidden_sizes": [32, 32, 64],
+           "act_layer": "relu",
+           "dropout_rate": 0.2,
+           "out_layer": "tanh"
+        }
+        },
+   
+    "train":{
+        "save_dir": "model/",
+        "log_dir": "log_test",
+        "epochs": 100,
+        "batch_size": 64,
+        "num_workers": 8,
+        "num_gpus": 1,
+        "grad_accum_step": 1,
+        "scheduler":{
+            "warmup":{
+                "steps": 5,
+                "type": "linear",
+                "start": 0.1
+            },
+            "type": "cosine",
+            "step": 100,
+            "milestones": [10, 20, 40, 60, 80],
+            "min": 5.5e-5,
+            "gamma": 0.1
+            },
+        "optimizer":{
+            "type": "SGD",
+            "lr": 1e-3,
+            "momentum": 0.95,
+            "weight_decay": 0.005
+            }
+        }
+   }

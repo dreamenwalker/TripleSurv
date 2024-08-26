@@ -1,0 +1,1 @@
+The synthetic dataset can be reproduced via generate_mnist.py
