@@ -22,9 +22,7 @@ pip install -r requirements.txt
 ## Training
 
 The main train file is train.py.
-
-
- python train.py 
+python train.py 
 
 
 
