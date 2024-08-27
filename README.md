@@ -5,9 +5,7 @@
 
 Author: Liwen Zhang, Lianzhen Zhong, Fan Yang, Linglong Tang, Di Dong, Hui Hui, Jie Tian, Fellow, IEEE
 
-
-
-#Environment
+# Environment
 Our code is based on pytorch tool. The main packages can be found in the file requirements.txt.
 
 - Python 3.11.9
@@ -30,7 +28,7 @@ The main train file is train.py.
 
 
 
-#Acknowledgement
+# Acknowledgement
 
 We thanks a lot for publish studies[1-3].Our code is mainly inspired by the x-cal[1], deephit[2].
 
