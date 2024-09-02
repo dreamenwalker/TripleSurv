@@ -4,7 +4,10 @@
 # TripleSurv: Triplet Time-adaptive Coordinate Learning Approach for Survival Analysis
 
 Author: Liwen Zhang, Lianzhen Zhong, Fan Yang, Linglong Tang, Di Dong, Hui Hui, Jie Tian
+If our code is helpful for your work, please cite:
 
+Liwen Zhang, Lianzhen Zhong, et al., TripleSurv: Triplet Time-Adaptive Coordinate Learning Approach for Survival Analysis, IEEE Transactions on Knowledge and Data Engineering, 2024. doi: 10.1109/TKDE.2024.3450910. 
+  
 # Environment
 Our code is based on pytorch tool. The main packages can be found in the file requirements.txt.
 
@@ -37,3 +40,5 @@ information processing systems, vol. 33, pp. 18 296–18 307, 2020
 [2] Lee C, Zame WR, Yoon J, van der Schaar M. Deephit: A deep learning approach to survival analysis with competing risks.  Thirty-Second AAAI Conference on Artificial Intelligence; 2018; 2018.
 
 [3] A. Avati, T. Duan, S. Zhou, K. Jung, N. H. Shah, and A. Y. Ng, “Countdown regression: Sharp and calibrated survival predictions,” pp. 145–155, 2020.
+
+
