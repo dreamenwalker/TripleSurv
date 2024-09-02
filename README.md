@@ -3,7 +3,6 @@
 
 # TripleSurv: Triplet Time-adaptive Coordinate Learning Approach for Survival Analysis
 
-Author: Liwen Zhang, Lianzhen Zhong, Fan Yang, Linglong Tang, Di Dong, Hui Hui, Jie Tian
 If our code is helpful for your work, please cite:
 
 Liwen Zhang, Lianzhen Zhong, et al., TripleSurv: Triplet Time-Adaptive Coordinate Learning Approach for Survival Analysis, IEEE Transactions on Knowledge and Data Engineering, 2024. doi: 10.1109/TKDE.2024.3450910. 
