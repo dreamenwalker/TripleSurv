@@ -40,4 +40,15 @@ information processing systems, vol. 33, pp. 18 296–18 307, 2020
 
 [3] A. Avati, T. Duan, S. Zhou, K. Jung, N. H. Shah, and A. Y. Ng, “Countdown regression: Sharp and calibrated survival predictions,” pp. 145–155, 2020.
 
+# Bibtex
+
+@ARTICLE{Zhang_TKDE2024,
+  author={Zhang, Liwen and Zhong, Lianzhen and Yang, Fan and Tang, Linglong and Dong, Di and Hui, Hui and Tian, Jie},
+  journal={IEEE Transactions on Knowledge and Data Engineering}, 
+  title={TripleSurv: Triplet Time-Adaptive Coordinate Learning Approach for Survival Analysis}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-12},
+  doi={10.1109/TKDE.2024.3450910}}
 
